@@ -8,7 +8,7 @@ defmodule SlackWebhook do
   @doc """
   Sends message to default channel.
   """
-  def send(msg), do: __MODULE__.send(msg, get_url)
+  def send(msg), do: __MODULE__.send(msg, get_url())
 
   @doc """
   Sends message to selected webhook url.
@@ -20,7 +20,7 @@ defmodule SlackWebhook do
   Sends asynchronous message to selected webhook url.
   Use when you want to "fire and forget" your notifications.
   """
-  def async_send(msg), do: __MODULE__.async_send(msg, get_url)
+  def async_send(msg), do: __MODULE__.async_send(msg, get_url())
 
   @doc """
   Sends asynchronous message to selected webhook url.
