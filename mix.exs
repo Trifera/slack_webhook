@@ -29,7 +29,7 @@ defmodule SlackWebhook.Mixfile do
   #
   # Type `mix help deps` for more examples and options
   defp deps do
-    [{:httpoison, "~> 0.9"},
+    [{:httpoison, "~> 1.0"},
      {:earmark, "~> 0.2.1", only: :dev},
      {:ex_doc, "~> 0.12.0", only: :dev}]
   end
