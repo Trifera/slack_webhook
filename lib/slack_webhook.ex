@@ -28,10 +28,6 @@ defmodule SlackWebhook do
   def async_send(msg, url), do: HTTPoison.post(url, get_content(msg), [], [hackney: [:async]])
 
   defp get_url, do: Application.get_env(:slack_webhook, :url, "")
-  defp get_content(msg), do: """
-  {
-    "text": "#{msg}"
-  }
-  """
+  defp get_content(msg), do: Jason.encode!(%{text: msg})
 
 end
